@@ -1,0 +1,20 @@
+{
+  "name": "equirectangular-projection",
+  "version": "1.0.0",
+  "description": "project coordinates into pixel on Equirectangular projection",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha test.js"
+  },
+  "keywords": [
+    "equirectangular",
+    "projection",
+    "map"
+  ],
+  "author": "Franck Ernewein",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "mocha": "^2.3.4"
+  }
+}
