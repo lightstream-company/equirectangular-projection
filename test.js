@@ -11,25 +11,22 @@ describe('equirectangular-projection', function() {
   });
 
   it('should project latitude', function() {
-    expect(equi.projectLat(-90, 100)).to.be.equal(0);
-    expect(equi.projectLat(90, 100)).to.be.equal(100);
+    expect(equi.projectLat(90, 100)).to.be.equal(0);
+    expect(equi.projectLat(-90, 100)).to.be.equal(100);
     expect(equi.projectLat(0, 100)).to.be.equal(50);
-    expect(equi.projectLat(45, 100)).to.be.equal(75);
+    expect(equi.projectLat(45, 100)).to.be.equal(25);
   });
 
   it('should project latitude and longitude', function() {
     expect(equi.project(-180, -90, 100)).to.be.deep.equal({
-      top: 0,
+      top: 50,
       left: 0
     });
-    expect(equi.project(180, 90, 100)).to.be.deep.equal({
-      top: 50,
-      left: 100
-    });
-    expect(equi.project(0, 0, 100)).to.be.deep.equal({
-      top: 25,
-      left: 50
-    });
+
+    var p2 = equi.project(180, 90, 100);
+    expect(p2.top).to.be.equal(0);
+    expect(p2.left).to.be.equal(100);
+
     expect(equi.project(0, 0, 100)).to.be.deep.equal({
       top: 25,
       left: 50

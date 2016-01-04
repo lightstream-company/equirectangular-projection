@@ -5,7 +5,7 @@ function projectLat(lat, height) {
   if (isNaN(height) || typeof height !== 'number'){
     throw new Error('viewport height is not valid');
   }
-  return (lat + 90) / 180 * height;
+  return ((lat - 90) / -180 * height);
 }
 
 function projectLng(lng, width) {
@@ -20,8 +20,8 @@ function projectLng(lng, width) {
 
 function project(lng, lat, width) {
   return {
-    top: projectLng(lng, width / 2),
-    left: projectLat(lat, width)
+    left: projectLng(lng, width),
+    top: projectLat(lat, width / 2)
   };
 }
 
