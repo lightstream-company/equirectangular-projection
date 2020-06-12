@@ -1,4 +1,4 @@
-#equirectangular-projection
+# equirectangular-projection
 
 project coordinates into pixel for equirectagular map
 
